@@ -5,6 +5,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "students")
+@NamedQuery(name = "findStudentsByNameLike", query = "select student from JpaStudent student where lower(student.pib) like :part")
 public class JpaStudent {
     @Id
     @Column(name = "id")
@@ -53,5 +54,21 @@ public class JpaStudent {
 
     public void setCourses(List<Course> courses) {
         this.courses = courses;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        JpaStudent that = (JpaStudent) o;
+
+        return id.equals(that.id);
+
+    }
+
+    @Override
+    public int hashCode() {
+        return id.hashCode();
     }
 }

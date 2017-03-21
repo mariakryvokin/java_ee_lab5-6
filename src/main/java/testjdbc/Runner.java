@@ -5,7 +5,6 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import testjdbc.config.AppConfig;
-import testjdbc.dao.jdbc.StudentDao;
 import testjdbc.dao.jpa.CourseDao;
 import testjdbc.dao.jpa.JpaStudentDao;
 import testjdbc.dao.jpa.TeacherDao;
